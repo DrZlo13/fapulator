@@ -1,0 +1,20 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "Build",
+            "command": "cmake -DCMAKE_BUILD_TYPE=Debug -S. -B build && cd build && make",
+            "group": "build"
+        },
+        {
+            "type": "shell",
+            "label": "Build and Run",
+            "dependsOn": "Build",
+            "command": "cd build && ./fapulator",
+            "group": "build"
+        },
+    ]
+}
